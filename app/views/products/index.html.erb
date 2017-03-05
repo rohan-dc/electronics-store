@@ -1,0 +1,29 @@
+<!-- all products page -->
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Productid</th>
+      <th>Category</th>
+      <th>Productname</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.productID %></td>
+        <td><%= product.category.name %></td>
+        <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,16 @@
+<!-- view for individual product pages -->
+<p id="notice"><%= notice %></p>
+
+<h1><%= @product.name %></h1>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Back', products_path %>
