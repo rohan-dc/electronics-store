@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//=require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+  $('#hidden_div').hide(); //Initially form wil be hidden.
+  
+  $('#import_complete').click(function() {
+     $('#hidden_div').show();
+  });
+});

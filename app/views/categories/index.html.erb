@@ -7,8 +7,12 @@
 
 <%= form_tag("/seed", method: "post") do %>
   <%= text_field_tag(:csv_url) %>
-  <%= submit_tag("Trigger Import") %>
+  <%= submit_tag("Trigger Import", id: "import_complete") %>
 <% end %>
+
+<div id="hidden_div">
+   <p>Import Complete</p>
+</div>
 
 <h1>Product Categories</h1>
 
