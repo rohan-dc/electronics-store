@@ -67,19 +67,12 @@ class CategoriesController < ApplicationController
   end
   
   def importcsv
+    # get csv url from user
     @csv_url = params[:csv_url]
     
-    namespace :db do
-      namespace :test do
-        task :prepare => :environment do
-          Rake::Task["db:seed"].invoke
-        end
-      end
-    end
-    
-    #require rspec/rails
+    #re-run rake db:seed command
     #Rails.application.load_seed
-    #load "#{Rails.root}/db/seeds.rb"
+    load (Rails.root.join("db/seeds.rb"))
     redirect_to :back
   end
 
