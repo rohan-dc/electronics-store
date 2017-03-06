@@ -75,6 +75,25 @@ class CategoriesController < ApplicationController
     load (Rails.root.join("db/seeds.rb"))
     redirect_to :back
   end
+  
+  def seed
+    # get csv url from user
+    @csv_url = params[:csv_url]
+    
+    @page_string = ""
+    
+    require 'open-uri'
+      open(@csv_url) do |f|
+      @page_string = f.read
+    end
+    
+    File.open('db/seeds_data/products.csv', 'w') do |file|
+      file << @page_string
+    end
+    
+
+    Rails.application.load_seed
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

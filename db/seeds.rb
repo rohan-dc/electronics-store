@@ -8,6 +8,6 @@
 
 require 'csv'
 # get all products in CSV
-CSV.foreach(Rails.root.join("db/seeds_data/products.1.csv"), headers: true) do |row|
+CSV.foreach(Rails.root.join("db/seeds_data/products.csv"), headers: true) do |row|
   Product.find_or_create_by(productID: row[0], category_id: Category.find_or_create_by(name: row[1]).id, name: row[2], price: row[3])
 end
