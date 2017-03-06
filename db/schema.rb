@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170305041315) do
     t.integer  "category_id",            null: false
     t.string   "productID"
     t.string   "name"
-    t.float    "price",       limit: 24
+    t.string    "price",       limit: 24
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

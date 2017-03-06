@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @currency_price = currency_helper.number_to_currency(@product.price,  :unit => "$")
   end
 
   # GET /products/new
@@ -60,6 +61,13 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  #to convert number to currency
+  def currency_helper
+    @helper ||= Class.new do
+      include ActionView::Helpers::NumberHelper
+    end.new
   end
 
   private

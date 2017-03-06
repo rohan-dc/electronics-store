@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
-feature 'Perform an import and view the results' do
+feature 'Perform an import and view the results', :type => :feature do
   background do
     visit "/start"
     click_on 'Trigger Import'
