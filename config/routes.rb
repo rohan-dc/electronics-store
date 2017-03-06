@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   #adds the CROD 
   resources :products
   
-  post 'categories/importcsv'
-  
+  #seed when URL provided
   post '/seed' => 'categories#seed'
   
   
