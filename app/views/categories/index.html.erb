@@ -2,10 +2,12 @@
 <p id="notice"><%= notice %></p>
 
 <!-- user to enter csv url -->
-<p style="margin-bottom: 5px; margin-left: 0px;" class=fancy_font>Enter the csv URL in the text box below</p>
+<p style="margin-bottom: 5px; margin-left: 0px;" class=fancy_font>Enter the csv URL in the text box below (Optional); 
+  If left blank; default file will be pushed to the db</p>
+
 <%= form_tag("/seed", method: "post") do %>
   <%= text_field_tag(:csv_url) %>
-  <%= submit_tag("Import CSV") %>
+  <%= submit_tag("Trigger Import") %>
 <% end %>
 
 <h1>Product Categories</h1>

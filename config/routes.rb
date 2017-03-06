@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #root 'controller#function'
   root 'categories#index'
   
+  # for rspec tests
+  get '/start' => 'categories#index'
+  
   #adds the CROD 
   resources :products
   

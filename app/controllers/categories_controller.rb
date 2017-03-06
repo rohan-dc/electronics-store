@@ -72,14 +72,15 @@ class CategoriesController < ApplicationController
     @csv_url = params[:csv_url]
     @page_string = ""
     
-    require 'open-uri'
-      open(@csv_url) do |f|
-      @page_string = f.read
-    end
-    
-    File.open('db/seeds_data/products.csv', 'w') do |file|
-      file << @page_string
-    end
+    #functionality for user to input csv URL
+    #  require 'open-uri'
+    #    open(@csv_url) do |f|
+    #    @page_string = f.read
+    #  end
+      
+    #  File.open('db/seeds_data/products.csv', 'w') do |file|
+    #    file << @page_string
+    #  end
 
     Rails.application.load_seed
   end
