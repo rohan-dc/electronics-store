@@ -1,13 +1,14 @@
 <!-- all categories page; index page -->
 <p id="notice"><%= notice %></p>
 
-<h1>Product Categories</h1>
-
 <!-- user to enter csv url -->
+<p style="margin-bottom: 5px; margin-left: 0px;" class=fancy_font>Enter the csv URL in the text box below</p>
 <%= form_tag("/seed", method: "post") do %>
   <%= text_field_tag(:csv_url) %>
   <%= submit_tag("Import CSV") %>
 <% end %>
+
+<h1>Product Categories</h1>
 
 <!-- display all categories -->
 <table class=table style="margin-top: 20px;">
