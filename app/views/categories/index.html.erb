@@ -1,6 +1,7 @@
 <!-- all categories page; index page -->
 <p id="notice"><%= notice %></p>
 
+
 <!-- user to enter csv url -->
 <p style="margin-bottom: 5px; margin-left: 0px;" class=fancy_font>Enter the csv URL in the text box below (Optional); 
   If left blank; default file will be pushed to the db</p>
@@ -10,9 +11,11 @@
   <%= submit_tag("Trigger Import", id: "import_complete") %>
 <% end %>
 
+
 <div id="hidden_div">
    <p>Import Complete</p>
 </div>
+
 
 <h1>Product Categories</h1>
 

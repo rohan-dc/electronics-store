@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function() {
-  $('#hidden_div').hide(); //Initially form wil be hidden.
+  $('#hidden_div').hide(); //Initially div containing 'Import Completed' wil be hidden.
   
   $('#import_complete').click(function() {
      $('#hidden_div').show();
